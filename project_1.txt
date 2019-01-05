@@ -1,0 +1,34 @@
+PART 1:
+
+Clarifications for Project 1:
+For 2.1 question 2, you only need compute first K=10 eigen-warpings.
+For 2.1 question 4, just show the sampled appearances on V channel.
+
+Clarification about landmark compression:
+You should treat landmarks exactly like images with 68 * 2 dimensions.
+The top ten eigen-warpings are ten 68*2 matrix, each is an eigen-landmark.
+You don't necessarily need to do PCA separately for x and y dimensions.
+
+PCA:
+You can use a library like Sklearn to do PCA.
+You can also use numpy to do SVD: “np.linalg.svd()”
+
+Q: I am using numpy.linalg.eig to calculate eigenvectors of the covariance matrix size 16384*16384.
+This is taking too long to compute.
+A: There is a trick that you can use to calculate the eigenvectors.
+Suppose you are calculating eig(X^TX) and it takes a long time.
+You can try to calculate eig(XX^T) instead, which in our case is 800 * 800 square matrix.
+XX^Tv = λv
+X^T * XX^Tv = X^T * λv = λX^Tv
+That is, X^TX(X^Tv) = λ(X^Tv)
+
+Summary of PCA Approach:
+1. Standardize the data.
+2. Obtain the Eigenvectors and Eigenvalues from the covariance matrix or correlation matrix, or perform Singular Vector Decomposition.
+3. Sort eigenvalues in descending order and choose the k eigenvectors that correspond to the k largest eigenvalues where k is the number of dimensions of the new feature subspace (k≤d).
+4. Construct the projection matrix W from the selected k eigenvectors.
+5. Transform the original dataset X via W to obtain a k-dimensional feature subspace Y.
+
+PART 2:
+
+PART 3:
