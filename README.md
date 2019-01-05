@@ -1,4 +1,3 @@
-# pca-autoencoder-fld-face-images-analysis
 ## Synopsis
 The human face is a very important pattern and has been extensively studied in the past 30 years
 in vision, graphics, and human computer interaction for tasks like face recognition, human
@@ -84,7 +83,7 @@ have the maximal variance, and get the interpolation results on each dimension w
 the other dimensions fixed. Show the results by warping a chosen face by the generated
 landmarks. Figure 3 shows an interpolation result for appearance and landmark respectively.
 
-<b>Part 2: Fisher faces for gender discrimination.</b><br/>
+<b>Part 2: Fisher faces for gender discrimination</b><br/>
 We have divided the 1000 faces into male (412) and female faces (588). Then one may randomly
 choose 800 faces as the training set and the remaining 200 faces as testing set.
 (1) Find the Fisher face that distinguishes male from female using the training sets, and then
@@ -106,4 +105,3 @@ reduction: two generative methods — PCA (Linear) and Autoencoder (non-linear) 
 ## Acknowledgements
 
 This machine learning project is part of UCLA's Statistics 231/Computer Science 276A course on pattern recognition in machine learning, instructed by Professor Song-Chun Zhu.
-
